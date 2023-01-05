@@ -1,0 +1,56 @@
+@use '../fragments/_repeatedStyles'
+
+.heroSection
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+  margin: auto
+  padding-bottom: var(--block-padding)
+
+  .hero
+    font-size: 5.5vw
+    @extend .moveUp
+
+  .scrollIndicator
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    position: absolute
+    bottom: 5rem
+
+    color: #888
+    background: none
+
+    animation: 600ms idle infinite alternate-reverse
+
+    opacity: calc(1 - var(--nav-bar-progress))
+
+    span
+      font-size: 2rem
+
+    &::after
+      content: 'scroll'
+      font-family: 'JetBrains Mono', monospace
+      font-size: 1rem
+      margin-top: 1rem
+
+
+  .subtitle
+    font-size: 2.3vw
+    font-weight: bold
+    color: var(--accent-color)
+    position: relative
+
+    @extend .moveUp
+
+    margin-right: -19vw
+    margin-top: -1vw
+
+@keyframes idle
+  0%
+    tranform: translateY(0)
+  100%
+    transform: translateY(-10%)
