@@ -92,7 +92,7 @@ function Projects() {
         <span className="material-symbols-rounded">arrow_forward_ios</span>
       </div>
 
-      <select style={{ margin: 'auto' }} onChange={handleTagFilter} name="Filter tags">
+      <select onChange={handleTagFilter} name="Filter tags">
         <option value="">Filter tags</option>
         {generateTags()}
       </select>
