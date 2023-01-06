@@ -20,7 +20,7 @@ function Projects() {
       image: infiniteSpaceImg,
       projectLink: 'https://hexy32.github.io/infinite-space/',
       repositoryLink: 'https://github.com/Hexy32/infinite-space',
-      tags: ['TypeScript', 'Electron', 'WebPack'],
+      tags: ['TypeScript', 'Electron', 'Webpack'],
     },
     {
       title: 'Streamline Website',
