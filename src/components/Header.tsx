@@ -1,37 +1,64 @@
+import { useEffect, useMemo, useState } from 'react'
+
 import s from '../sass/components/header.module.sass'
+import scrollTo from '../scripts/scrollTo'
 
 function Header() {
-  // const [isScrolled, setIsScrolled] = useState(false)
+  const [amountScrolled, setAmountScrolled] = useState(0)
+  const [currentPage, setCurrentPage] = useState('Home')
+
+  document.addEventListener('scroll', () => {
+    setAmountScrolled(window.pageYOffset)
+  })
+
+  useEffect(() => {
+    //Check what 'page' the user is scrolled to
+    const headerOffset = document.querySelector('header')!.clientHeight + 5
+
+    for (let i = navItems.length - 1; i >= 0; i--) {
+      const item = navItems[i]
+      const itemElement =
+        item.text !== 'Home'
+          ? document.querySelector<HTMLElement>('#' + item.text)!
+          : document.querySelector<HTMLElement>('body')!
+
+      // console.log(item.text, itemElement.offsetTop, amountScrolled)
+      if (amountScrolled + headerOffset >= itemElement.offsetTop) {
+        setCurrentPage(item.text)
+        break
+      }
+    }
+  }, [amountScrolled])
 
   const navItems: NavItem[] = [
     {
       text: 'Home',
-      function: () => {
-        console.log('clicked!')
+      action() {
+        scrollTo('Home')
       },
     },
     {
       text: 'Projects',
-      function: () => {
-        console.log('clicked!')
+      action() {
+        scrollTo('Projects')
       },
     },
     {
       text: 'About',
-      function: () => {
-        console.log('clicked!')
+      action() {
+        scrollTo('About')
       },
     },
     {
       text: 'Resume',
-      function: () => {
-        console.log('clicked!')
+      action() {
+        scrollTo('Resume')
       },
     },
     {
       text: 'Contact',
-      function: () => {
-        console.log('clicked!')
+      action() {
+        scrollTo('Contact')
       },
     },
   ]
@@ -39,7 +66,9 @@ function Header() {
   const createNav = (navItems: NavItem[]) => {
     return navItems.map(item => (
       <li key={item.text}>
-        <button onClick={item.function}>{item.text}</button>
+        <button className={item.text === currentPage ? s['selected'] : ''} onClick={item.action}>
+          {item.text}
+        </button>
       </li>
     ))
   }
@@ -61,5 +90,5 @@ export default Header
 
 interface NavItem {
   text: string
-  function: () => void
+  action(): void
 }

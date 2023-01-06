@@ -3,7 +3,7 @@ import s from '../sass/components/section.module.sass'
 
 function Section({ children, name }: SectionProps) {
   return (
-    <section className={s.section + ' ' + (name ? s[name.toLowerCase()] : s.home)}>
+    <section id={name} className={s.section + ' ' + (name ? s[name.toLowerCase()] : s.home)}>
       {name ? <h2 className={s.title}>{name}</h2> : null}
       {children}
     </section>

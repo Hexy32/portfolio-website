@@ -20,8 +20,12 @@ function ProjectCard({
           ))}
         </div>
         <p>{details}</p>
-        <a href={projectLink}>Check it out</a>
-        <a href={repositoryLink}>See the code</a>
+        <a target="_blank" href={projectLink}>
+          Check it out
+        </a>
+        <a target="_blank" href={repositoryLink}>
+          See the code
+        </a>
       </div>
       <img src={image} alt="" />
     </article>

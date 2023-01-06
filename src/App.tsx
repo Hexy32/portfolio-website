@@ -1,5 +1,6 @@
 import './sass/main.sass'
 import './scripts/animations'
+import './scripts/scrollTo'
 
 import About from './pages/About'
 import Contact from './pages/Contact'
