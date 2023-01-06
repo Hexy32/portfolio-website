@@ -37,6 +37,16 @@ textarea
 	border-radius: var(--border-radius)
 	padding: 0.5rem 1rem
 
+	&:hover
+		transition: background 300ms ease, color 300ms ease
+		background-color: var(--main-color)
+		color: var(--secondary-color)
+
+		& > a
+			color: var(--secondary-color) !important
+
+
+
 input[type='text'],
 input[type='number'],
 textarea
@@ -46,5 +56,6 @@ textarea
 	appearance: textfield
 
 input:focus,
+select:focus,
 textarea:focus
 	outline: transparent

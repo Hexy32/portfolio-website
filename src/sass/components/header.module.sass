@@ -43,9 +43,10 @@
 
         &:hover:not(.selected)
           transition: background 300ms ease, color 300ms ease
-          background-color: #272727
-          color: #DDD
+          background-color: var(--main-color)
+          color: var(--secondary-color)
 
         &.selected
-          transition: background-color 100ms ease
+          transition: background 300ms ease, color 300ms ease
           background-color: var(--accent-color)
+          color: var(--secondary-color)
