@@ -13,9 +13,19 @@
     display: flex
     gap: 1rem
 
+    & > *:last-child
+      order: 3
+
+    @media ( max-width: 1200px  )
+      flex-direction: column
+
+      & > *:last-child
+        order: 1
+
+
     select, input
       flex-grow: 1
-      flex-basis: 10rem
+      flex-basis: 1.7rem
 
       border-radius: var(--border-radius)
       padding: 1rem 2rem
@@ -42,6 +52,7 @@
       font-size: 2rem
       color: var(--accent-color)
       text-align: center
+      order: 2
 
       span
         color: white
@@ -50,8 +61,18 @@
         cursor: pointer
 
 .cardsWrapper
+  --number-of-items: 1
+  @media ( min-width: 1200px  )
+    --number-of-items: 2
+  @media ( min-width: 1500px  )
+    --number-of-items: 3
+  @media ( min-width: 2000px  )
+    --number-of-items: 4
+  @media ( width > 2500px  )
+    --number-of-items: 5
+
   display: grid
-  grid-template-columns: repeat(3, 1fr)
+  grid-template-columns: repeat(var(--number-of-items), 1fr)
   gap: 2rem
   flex-grow: 1
 

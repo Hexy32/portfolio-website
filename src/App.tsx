@@ -13,7 +13,7 @@ import Section from './components/Section'
 
 function App() {
   return (
-    <>
+    <main>
       <Header />
       <Section>
         <Home />
@@ -31,7 +31,7 @@ function App() {
         <Contact />
       </Section>
       <Footer />
-    </>
+    </main>
   )
 }
 

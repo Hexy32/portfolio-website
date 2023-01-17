@@ -6,6 +6,7 @@ import calculatorImg from '../assets/calculator.png'
 import infiniteSpaceImg from '../assets/infinite-space.png'
 import s from '../sass/pages/projects.module.sass'
 import streamlineWebsiteImg from '../assets/streamline-website.png'
+import toDoListImg from '../assets/to-do.png'
 
 function Projects() {
   const [query, setQuery] = useState('')
@@ -16,11 +17,21 @@ function Projects() {
       title: 'To do list',
       date: 'Jun 20, 2022 - Nov 18, 2022',
       details:
-        'I developed a to-do list application using TypeScript, Electron, and Webpack. TypeScript, a strongly-typed superset of JavaScript, provided a stable and scalable foundation for the application. Electron allowed me to build the app as a cross-platform desktop application, while Webpack enabled me to bundle the application code in an efficient manner. The app allows users to create and manage their own to-do lists, with features such as adding and completing tasks and having several to-do lists in the form of tabs. Overall, the combination of TypeScript, Electron, and Webpack allowed me to create a reliable and user-friendly to-do list app that can be used on multiple desktop platforms.',
+        'I developed a to do list application using TypeScript, Electron, and Webpack. TypeScript, a strongly-typed superset of JavaScript, provided a stable and scalable foundation for the application. Electron allowed me to build the app as a cross-platform desktop application, while Webpack enabled me to bundle the application code in an efficient manner. The app allows users to create and manage their own to do lists, with features such as adding and completing tasks and having several to do lists in the form of tabs. Overall, the combination of TypeScript, Electron, and Webpack allowed me to create a reliable and user-friendly to do list app that can be used on multiple desktop platforms.',
+      image: toDoListImg,
+      projectLink: 'https://to-do-list-zeta-green.vercel.app/#',
+      repositoryLink: 'https://github.com/Hexy32/to-do-list',
+      tags: ['TypeScript', 'Electron', 'Webpack', 'Sass', 'Vite'],
+    },
+    {
+      title: 'Infinite Space',
+      date: 'Dec 17, 2022',
+      details:
+        'A friend and I developed a production-ready website for my Minecraft server, Streamline SMP, using Next.JS, React, Sass, and Vercel. Next.JS, a framework for building server-rendered React applications, provided a powerful and efficient platform for the website. React allowed me to build the website as a collection of reusable components, and Sass allowed me to write clean and organized CSS code. The website was deployed with Vercel, a cloud platform for static sites and serverless functions, which ensured a smooth and reliable experience for users. Overall, the combination of Next.JS, React, Sass, and Vercel allowed me to create a professional and user-friendly website for my Minecraft server. Working with somebody allowed me to get more experience with Git and helped me get better at collaboration.',
       image: infiniteSpaceImg,
       projectLink: 'https://hexy32.github.io/infinite-space/',
       repositoryLink: 'https://github.com/Hexy32/infinite-space',
-      tags: ['TypeScript', 'Electron', 'Webpack'],
+      tags: ['TypeScript', 'Fetch API'],
     },
     {
       title: 'Streamline Website',

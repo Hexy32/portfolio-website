@@ -1,9 +1,17 @@
 @use './fragments/reset'
+@use './fragments/_globalVars'
 
 // JUST FOR PRE CSS DEVELOPMENT
 img
   width: 30px
 
+html
+  // overflow-x: hidden
+
 body
   padding: var(--block-padding) var(--inline-padding)
   font-weight: 900
+  overflow-x: hidden
+  width: 100%
+  height: 100vh
+  position: absolute
